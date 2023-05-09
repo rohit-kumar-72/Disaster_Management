@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Temperature</h1>
+    <form>
+        <label for="city-input">Enter city:</label>
+        <input type="text" id="city-input" name="city">
+        <button type="submit">Get Weather</button>
+    </form>
+    <div id="weather"></div>
+    <script>
+        $('form').submit(function (event) {
+            event.preventDefault();
+            var city = $('#city-input').val();
+            var apiKey = 'xylaU79WjP4gXNdsUrUnh7Z4leKhP88eHuVam94c';
+            var apiUrl = 'https://api.api-ninjas.com/v1/weather?city=' + city;
+
+            $.ajax({
+                method: 'GET',
+                url: apiUrl,
+                headers: { 'X-Api-Key': apiKey },
+                contentType: 'application/json',
+                success: function (result) {
+                    var weatherData = `
+            <h2>${result.name}</h2>
+           <p>Temperature: ${result.temperature}°C</p>
+          `;
+                    $('#weather').html(weatherData);
+                },
+                error: function ajaxError(jqXHR) {
+                    console.error('Error: ', jqXHR.responseText);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

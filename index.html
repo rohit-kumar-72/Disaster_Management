@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>disaster management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fa2575a81c.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <img src="images/logo.webp" alt="logo">
+            <ul>
+                <a href="#">
+                    <li>Home</li>
+                </a>
+                <a href="#maps">
+                    <li>Maps</li>
+                </a>
+                <a href="form.html">
+                    <li>Discussion Forum</li>
+                </a>
+                <a href="http://127.0.0.1/Disaster/donation.html">
+                    <li>Donation</li>
+                </a>
+                <a href="Discussion Forum/Email/index.html">
+                    <li>Email</li>
+                </a>
+
+                <a href="http://127.0.0.1/Location/">
+                    <li>Location</li>
+                </a>
+            </ul>
+        </nav>
+    </div>
+    <div class="section">
+        <h2></h2>
+        <div class="image_container">
+            <div class="cards image1">
+                <a href="covid19.html"><img src="images/covid.jpg" alt="image1">
+                    <h3>Covid 19</h3>
+                </a>
+            </div>
+            <div class=" cards image2">
+                <a href="#"><img src="images/flood.jpg" alt="image2">
+                    <h3>Flood</h3>
+                </a>
+            </div>
+            <div class="cards image3">
+                <a href="#">
+                    <img src="images/lightening.jpg" alt="image3">
+                    <h3>Lightening</h3>
+                </a>
+            </div>
+            <div class="cards image4">
+                <a href="Discussion Forum/Rain/rain.html"><img src="images/rainfall.jpg" alt="image4">
+                    <h3>Rainfall</h3>
+                </a>
+            </div>
+            <div class="cards image5">
+                <a href="Discussion Forum/Temperature/temperature.html"><img src="images/temperature.jpg" alt="image5">
+                    <h3>Temperature</h3>
+                </a>
+            </div>
+            <div class="cards image6">
+                <a href="Discussion Forum/Wind/wind.html"><img src="images/strongwind.jpg" alt="image6">
+                    <h3>Strong Wind</h3>
+                </a>
+            </div>
+        </div>
+        <h1>Disasters</h1>
+        <div class="maps" id="maps">
+            <div class="map_card">
+                <a href="flood_map.html">
+                    <img src="map_images/flood.png" alt="flood">
+                    <h4 href="mi/fl">flood</h2>
+                </a>
+            </div>
+            <div class="map_card">
+                <a href="earthquake_map.html">
+                    <img src="map_images/earthquake.png" alt="earthquake">
+                    <h4>Earthquake</h2>
+                </a>
+            </div>
+            <div class="map_card">
+                <a href="drought_map.html">
+                    <img src="map_images/drought.png" alt="drought">
+                    <h4>Drought</h2>
+                </a>
+            </div>
+            <div class="map_card">
+                <a href="landslide_map.html">
+                    <img src="map_images/landslide.png" alt="landslide">
+                    <h4>landslide</h2>
+                </a>
+            </div>
+            <div class="map_card">
+                <a href="lightning_map.html">
+                    <img src="map_images/lightening.png" alt="lightening">
+                    <h4>lightening</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="images/logo.webp" alt="">
+        <!-- <div class="left"></div> -->
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-linkedin"></i>
+        <p>copyright©2023</p>
+
+    </div>
+</body>
+<button id="sos-button">SOS</button>
+<div id="sos-form" style="display: none;" href="sms.js"></div>
+<script>
+    var sosButton = document.getElementById("sos-button")
+    var sosForm = document.getElementById("sos-form")
+</script>
+
+</html>
