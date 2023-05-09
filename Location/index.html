@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="output"></div>
+<script>
+const options = {
+  enableHighAccuracy: true, 
+  timeout: 5000, 
+  maximumAge: 2000, 
+};
+const watchId = navigator.geolocation.watchPosition(success, error, options);
+
+function success(pos) {
+  const lat = pos.coords.latitude;
+  const lng = pos.coords.longitude;
+  const accuracy = pos.coords.accuracy; 
+  document.getElementById('output').innerText = `
+    User coordinates: 
+    Latitude ${lat}.
+    Longitude ${lng}.
+    Estimation accurate within ${Math.round(accuracy)} metres.`;
+
+  // send location data to server
+  const xhr = new XMLHttpRequest();
+  const url = "save_location.php";
+  const params = `latitude=${lat}&longitude=${lng}&accuracy=${accuracy}`;
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.send(params);
+
+  // stop location tracking after the first successful location update
+  navigator.geolocation.clearWatch(watchId);
+}
+
+function error(err) {
+  if (err.code === 1) {
+    alert("Please allow geolocation access");
+  }
+}
+</script>
+</body>
+</html>
